@@ -6,7 +6,7 @@ class PedidosModel{
         this.conexao = mysql.createConnection(config.db)
         console.debug("Conectado")
     }
-    create(id_pedido,nome_descricao){
+    create(id_pedido,descricao_pedido,valor_total){
         let sql = `insert into pedidos values("${id_pedido}","${descricao_pedido}", "${valor_total}", "${id_cliente}");`
 
         return new Promise((resolve, reject)=>{

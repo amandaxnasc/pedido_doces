@@ -5,9 +5,10 @@ class PedidosController{
 
     }
     create(req,res){
-        const descricao_pedido = req.body.descricao_pedido
         const id_pedido = req.body.id_pedido
-        PedidosModel.create(id_pedido,descricao_pedido,valor_total,id_cliente).then(
+        const descricao_pedido = req.body.descricao_pedido
+        const valor_total = req.body.valor_total
+        PedidosModel.create(id_pedido,descricao_pedido,valor_total).then(
             resposta =>{
                 console.debug("Cadastrando um pedido")
                 res.status(resposta[0]).json(resposta[1])                
